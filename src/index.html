@@ -1351,6 +1351,70 @@
               </div>
             </template>
 
+            <!-- Settings -->
+            <template x-if="$store.app.activeScreen === 'settings'">
+              <div
+                class="w-full h-full flex justify-center items-center flex-col bg-[#242424]"
+                x-data="{activeScreen: 'general', notificationOn: false}"
+              >
+                <div
+                  class="size-[90%] flex flex-col justify-between items-center gap-[0.5vw] overflow-hidden"
+                >
+                  <div
+                    class="w-full h-auto flex justify-between items-center bg-transparent text-white mt-[0.3vw]"
+                  >
+                    <span class="text-[0.65vw] font-medium">Ajustes</span>
+                  </div>
+                  <div
+                    class="size-full flex flex-col justify-start items-center gap-[0.5vw] overflow-hidden"
+                  >
+                    <div
+                      class="w-full h-auto flex flex-col justify-start items-center gap-[0.5vw] overflow-hidden"
+                    >
+                      <div
+                        class="w-full h-auto flex justify-between items-center bg-[rgba(20,20,20,0.8)] cursor-pointer p-[0.5vw] rounded"
+                      >
+                        <span class="text-white text-[0.6vw] font-medium"
+                          >Fondo de pantalla</span
+                        >
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 320 512"
+                          class="_icon_q76zg_45"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full h-auto flex justify-between items-center bg-[rgba(20,20,20,0.8)] cursor-pointer p-[0.5vw] rounded"
+                      >
+                        <span class="text-white text-[0.6vw] font-medium"
+                          >Notificaciones</span
+                        >
+                        <button
+                          class="min-w-[1.15vw] h-auto flex bg-white/40 cursor-pointer p-[0.15vw] rounded-full"
+                          :class="notificationOn ? 'justify-end': 'justify-start'"
+                          @click="notificationOn = !notificationOn"
+                        >
+                          <div
+                            class="size-[0.55vw] rounded-full duration-200"
+                            :class="notificationOn ? 'bg-green-500': 'bg-red-500'"
+                          ></div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+
             <!-- Bottom Navigation Bar -->
             <div
               class="fixed bottom-[0.5dvw] left-1/2 -translate-x-1/2 w-[60%] h-[0.3dvw] bg-[#f8f9fa] rounded-2xl cursor-pointer"

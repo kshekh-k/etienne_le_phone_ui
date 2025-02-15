@@ -1156,6 +1156,9 @@
   .bg-card-background {
     background-color: var(--color-card-background);
   }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
   .bg-input-bg {
     background-color: var(--color-input-bg);
   }
