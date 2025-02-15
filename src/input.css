@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000;
+  --color-foreground: #ffffff;
+  --color-card-background: #141414;
+  --color-primary: #317d52;
+  --color-foreground-light: #c9c9c9;
+  --color-input-bg: #2e2e2e;
+  --color-input-border: #424242;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .input {
+    @apply bg-input-bg border border-input-border px-3 pr-5 h-9 flex items-center w-full rounded-xs;
+  }
+
+  .input-label {
+    @apply block text-foreground-light mb-1;
+  }
+
+  .input-container {
+    @apply text-sm;
+  }
+
+  .input-error {
+    @apply text-red-600 text-xs mt-1;
+  }
+
+  .btn {
+    @apply bg-primary rounded-xs h-9 flex items-center justify-center text-sm font-bold cursor-pointer w-full;
+  }
+}
+
+@layer utilities {
+  .slider::-webkit-slider-thumb {
+    @apply appearance-none size-4 rounded-full;
+    background: white;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    @apply size-4 rounded-full;
+    background: white;
+    cursor: pointer;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;  scrollbar-width: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+ 
+
+}

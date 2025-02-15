@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div class="container mx-auto grid grid-cols-3 gap-6 py-20">
+      <div class="flex flex-col gap-8">
+        <!-- Slider -->
+        <div>
+          <label for="" class="text-lg font-semibold mb-2 inline-block"
+            >Slider</label
+          >
+          <div class="flex items-center gap-4" x-data="{ value: 4 }">
+            <button
+              class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+              @click="value = Math.max(0, value - 2)"
+            >
+              -
+            </button>
+            <input
+              type="range"
+              min="0"
+              max="10"
+              step="2"
+              x-model="value"
+              class="appearance-none grow bg-input-bg rounded-full h-2 slider"
+              id="myRange"
+            />
+            <button
+              class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+              @click="value = Math.min(10, value + 2)"
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <!-- Input field with error state -->
+        <div>
+          <label for="" class="text-lg font-semibold mb-2 inline-block"
+            >Input with Error State</label
+          >
+          <div class="input-container">
+            <label for="email" class="input-label"
+              >Email <span class="text-red-700">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input"
+              placeholder="Email"
+            />
+            <p class="input-error">Correo electrónico invalido.</p>
+          </div>
+        </div>
+
+        <div>
+          <label for="" class="text-lg font-semibold mb-2 inline-block"
+            >Input with Icon</label
+          >
+          <div class="input-container">
+            <label for="email" class="input-label"
+              >Contraseña <span class="text-red-700">*</span></label
+            >
+            <div class="relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                placeholder="Contraseña"
+              />
+              <button class="absolute right-3 top-2.5 cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-eye"
+                >
+                  <path
+                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                  />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

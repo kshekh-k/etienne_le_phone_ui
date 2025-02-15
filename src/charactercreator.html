@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div class="flex justify-end">
+      <!-- Tabs -->
+      <div
+        class="max-w-md w-full bg-card-background p-4 m-12"
+        x-data="{ active: 1 }"
+      >
+        <!-- Tabs Header -->
+        <div class="flex">
+          <!-- 1 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 1 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 1"
+          >
+            <span>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 576 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+
+          <!-- 2 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 2 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 2"
+          >
+            <span>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M.1 494.1c-1.1 9.5 6.3 17.8 15.9 17.8l32.3.1c8.1 0 14.9-5.9 16-13.9.7-4.9 1.8-11.1 3.4-18.1H380c1.6 6.9 2.9 13.2 3.5 18.1 1.1 8 7.9 14 16 13.9l32.3-.1c9.6 0 17.1-8.3 15.9-17.8-4.6-37.9-25.6-129-118.9-207.7-17.6 12.4-37.1 24.2-58.5 35.4 6.2 4.6 11.4 9.4 17 14.2H159.7c21.3-18.1 47-35.6 78.7-51.4C410.5 199.1 442.1 65.8 447.9 17.9 449 8.4 441.6.1 432 .1L399.6 0c-8.1 0-14.9 5.9-16 13.9-.7 4.9-1.8 11.1-3.4 18.1H67.8c-1.6-7-2.7-13.1-3.4-18.1-1.1-8-7.9-14-16-13.9L16.1.1C6.5.1-1 8.4.1 17.9 5.3 60.8 31.4 171.8 160 256 31.5 340.2 5.3 451.2.1 494.1zM224 219.6c-25.1-13.7-46.4-28.4-64.3-43.6h128.5c-17.8 15.2-39.1 30-64.2 43.6zM355.1 96c-5.8 10.4-12.8 21.1-21 32H114c-8.3-10.9-15.3-21.6-21-32h262.1zM92.9 416c5.8-10.4 12.8-21.1 21-32h219.4c8.3 10.9 15.4 21.6 21.2 32H92.9z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+
+          <!-- 3 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 3 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 3"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M278.06 256L444.48 89.57c4.69-4.69 4.69-12.29 0-16.97-32.8-32.8-85.99-32.8-118.79 0L210.18 188.12l-24.86-24.86c4.31-10.92 6.68-22.81 6.68-35.26 0-53.02-42.98-96-96-96S0 74.98 0 128s42.98 96 96 96c4.54 0 8.99-.32 13.36-.93L142.29 256l-32.93 32.93c-4.37-.61-8.83-.93-13.36-.93-53.02 0-96 42.98-96 96s42.98 96 96 96 96-42.98 96-96c0-12.45-2.37-24.34-6.68-35.26l24.86-24.86L325.69 439.4c32.8 32.8 85.99 32.8 118.79 0 4.69-4.68 4.69-12.28 0-16.97L278.06 256zM96 160c-17.64 0-32-14.36-32-32s14.36-32 32-32 32 14.36 32 32-14.36 32-32 32zm0 256c-17.64 0-32-14.36-32-32s14.36-32 32-32 32 14.36 32 32-14.36 32-32 32z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- 4 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 4 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 4"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- 5 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 5 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 5"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 640 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- 6 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 6 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 6"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="15"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                d="M21.6 18.2 13 11.75v-.91a3.496 3.496 0 0 0-.18-6.75A3.51 3.51 0 0 0 8.5 7.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .84-.69 1.52-1.53 1.5-.54-.01-.97.45-.97.99v1.76L2.4 18.2c-.77.58-.36 1.8.6 1.8h18c.96 0 1.37-1.22.6-1.8zM6 18l6-4.5 6 4.5H6z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- 7 -->
+          <button
+            class="grow hover:bg-white/10 py-2.5 text-xs border-b-2 duration-200 cursor-pointer flex justify-center"
+            :class="active === 7 ? 'border-b-primary' : 'border-b-input-bg'"
+            @click="active = 7"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Tabs Content -->
+        <div class="mt-4 max-h-[400px] overflow-y-auto pr-2">
+          <!-- 1 -->
+          <template x-if="active==1">
+            <div class="flex flex-col gap-4">
+              <div class="input-container">
+                <label for="email" class="input-label"
+                  >Nombre <span class="text-red-700">*</span></label
+                >
+                <input name="nombre" class="input" placeholder="Nombre" />
+                <p class="input-error">Nombre inválido</p>
+              </div>
+              <div class="input-container">
+                <label for="email" class="input-label"
+                  >Apellido <span class="text-red-700">*</span></label
+                >
+                <input name="apellido" class="input" placeholder="Apellido" />
+                <p class="input-error">Apellido inválido</p>
+              </div>
+              <div class="input-container">
+                <label for="email" class="input-label"
+                  >Edad <span class="text-red-700">*</span></label
+                >
+                <input
+                  name="edad"
+                  type="number"
+                  class="input"
+                  placeholder="Edad"
+                  min="16"
+                />
+              </div>
+
+              <!-- Line break -->
+              <div class="flex items-center gap-4">
+                <hr class="border-input-border grow" />
+                <span class="text-xs text-foreground-light">Género</span>
+                <hr class="border-input-border grow" />
+              </div>
+
+              <!-- Genders -->
+              <div
+                class="flex items-center justify-center gap-2"
+                x-data="{active: 1}"
+              >
+                <button
+                  class="size-6 rounded-sm flex items-center justify-center text-blue-400 duration-150"
+                  :class="active === 1 ? 'bg-blue-300/40' : 'hvoer:bg-blue-300/40'"
+                  @click="active = 1"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="216"
+                      cy="296"
+                      r="152"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                    ></circle>
+                    <path
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M448 160V64h-96m-28 124L448 64"
+                    ></path>
+                  </svg>
+                </button>
+
+                <button
+                  class="size-6 rounded-sm flex items-center text-pink-400 justify-center duration-150"
+                  :class="active === 2 ? 'bg-pink-300/40' : 'hover:bg-pink-300/40'"
+                  @click="active = 2"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="256"
+                      cy="184"
+                      r="152"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                    ></circle>
+                    <path
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M256 336v144m58-64H198"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </template>
+
+          <!-- 2 -->
+          <template x-if="active==2">
+            <div x-data="dnaTabData">
+              <div class="grid gap-4">
+                <!-- Inputs -->
+                <template x-for="input in inputs">
+                  <div class="grid gap-2">
+                    <label for="" x-text="input.label"></label>
+                    <div class="flex items-center gap-4">
+                      <button
+                        class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                        @click="input.value = Math.max(0, input.value - 2)"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="range"
+                        min="0"
+                        max="10"
+                        step="1"
+                        x-model="input.value"
+                        class="appearance-none grow bg-input-bg rounded-full h-2 slider"
+                        id="myRange"
+                      />
+                      <button
+                        class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                        @click="input.value = Math.min(10, input.value + 2)"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </template>
+
+                <!-- Eye Colors -->
+                <div class="pb-4">
+                  <label for="">Color de ojos</label>
+                  <div class="flex gap-3 flex-wrap justify-center mt-2">
+                    <template x-for="color in eyeColor.colors"
+                      ><button
+                        class="rounded-full size-6"
+                        :class="eyeColor.selectedColor === color && 'ring-2'"
+                        :style="`background-color: ${color}`"
+                        @click="eyeColor.selectedColor = color"
+                      ></button
+                    ></template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <!-- 3 -->
+          <template x-if="active==3">
+            <div x-data="headTabData">
+              <div class="grid gap-4">
+                <!-- Inputs -->
+                <template x-for="input in inputs">
+                  <div>
+                    <label
+                      class="mt-4 mb-2 inline-block"
+                      for=""
+                      x-text="input.label"
+                    ></label>
+                    <div class="grid gap-2">
+                      <template x-for="subInput in input.inputs">
+                        <div class="grid gap-2">
+                          <label for="" x-text="subInput.label"></label>
+                          <div class="flex items-center gap-4">
+                            <button
+                              class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                              @click="subInput.value = Math.max(0, subInput.value - 2)"
+                            >
+                              -
+                            </button>
+                            <input
+                              type="range"
+                              min="0"
+                              max="10"
+                              step="1"
+                              x-model="subInput.value"
+                              class="appearance-none grow bg-input-bg rounded-full h-2 slider"
+                              id="myRange"
+                            />
+                            <button
+                              class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                              @click="subInput.value = Math.min(10, subInput.value + 2)"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      </template>
+                    </div>
+                    <template x-for="swatch in input.swatches">
+                      <div class="pb-4 mt-2">
+                        <label for="" x-text="swatch.label"></label>
+                        <div class="flex gap-3 flex-wrap justify-center mt-2">
+                          <template x-for="color in swatch.colors"
+                            ><button
+                              class="rounded-full size-6"
+                              :class="swatch.selectedColor === color && 'ring-2'"
+                              :style="`background-color: ${color}`"
+                              @click="swatch.selectedColor = color"
+                            ></button
+                          ></template>
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- 4 -->
+          <template x-if="active==4">
+            <div class="flex flex-col gap-4" x-data="faceTabInputs">
+              <template x-for="input in inputs">
+                <div>
+                  <div class="grid gap-2">
+                    <label for="" x-text="input.label"></label>
+                    <div class="flex items-center gap-4">
+                      <button
+                        class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                        @click="input.value = Math.max(0, input.value - 2)"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="range"
+                        min="0"
+                        max="10"
+                        step="1"
+                        x-model="input.value"
+                        class="appearance-none grow bg-input-bg rounded-full h-2 slider"
+                        id="myRange"
+                      />
+                      <button
+                        class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                        @click="input.value = Math.min(10, input.value + 2)"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <button class="text-primary text-sm" @click="input.value = 4">
+                    Restablecer
+                  </button>
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <!-- 5 -->
+          <template x-if="active==5">
+            <div class="flex flex-col gap-4" x-data="faceFeatures">
+              <template x-for="input in inputs">
+                <div class="grid gap-2 mt-4">
+                  <label for="" x-text="input.label"></label>
+                  <template x-for="subInput in input.inputs">
+                    <div>
+                      <div class="grid gap-2">
+                        <label for="" x-text="subInput.label"></label>
+                        <div class="flex items-center gap-4">
+                          <button
+                            class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                            @click="subInput.value = Math.max(0, subInput.value - 2)"
+                          >
+                            -
+                          </button>
+                          <input
+                            type="range"
+                            min="0"
+                            max="10"
+                            step="1"
+                            x-model="subInput.value"
+                            class="appearance-none grow bg-input-bg rounded-full h-2 slider"
+                            id="myRange"
+                          />
+                          <button
+                            class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                            @click="subInput.value = Math.min(10, subInput.value + 2)"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                      <button
+                        class="text-primary text-sm"
+                        @click="subInput.value = 10"
+                      >
+                        Restablecer
+                      </button>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <!-- 6 -->
+          <template x-if="active==6">
+            <div class="flex flex-col gap-4" x-data="clothTab">
+              <template x-for="input in inputs">
+                <div class="grid gap-2 mt-4">
+                  <label for="" x-text="input.label"></label>
+                  <template x-for="subInput in input.inputs">
+                    <div class="grid gap-2">
+                      <label for="" x-text="subInput.label"></label>
+                      <div class="flex items-center gap-4">
+                        <button
+                          class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                          @click="subInput.value = Math.max(0, subInput.value - 2)"
+                        >
+                          -
+                        </button>
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          step="1"
+                          x-model="subInput.value"
+                          class="appearance-none grow bg-input-bg rounded-full h-2 slider"
+                          id="myRange"
+                        />
+                        <button
+                          class="bg-primary rounded-xs flex items-center justify-center size-5 cursor-pointer"
+                          @click="subInput.value = Math.min(10, subInput.value + 2)"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <!-- 7 -->
+          <template x-if="active==7">
+            <div>
+              <div
+                class="mt-4 p-4 bg-red-700 flex items-center gap-2 rounded-xs"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-info"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 16v-4" />
+                  <path d="M12 8h.01" />
+                </svg>
+                <span class="text-sm leading-none">alt un initialized</span>
+              </div>
+              <button class="btn mt-4">Crear Personaje</button>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script defer src="./js/alpinejs/dist/cdn.min.js"></script>
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("faceTabInputs", () => ({
+          inputs: [
+            {
+              id: "noseWidth",
+              label: "Ancho de la nariz",
+              value: 4,
+            },
+            {
+              id: "noseHeight",
+              label: "Altura de la nariz",
+              value: 4,
+            },
+            {
+              id: "noseLength",
+              label: "Longitud de la nariz",
+              value: 4,
+            },
+            {
+              id: "noseBridge",
+              label: "Puente de la nariz",
+              value: 4,
+            },
+            {
+              id: "noseTip",
+              label: "Punta de la nariz",
+              value: 4,
+            },
+            {
+              id: "noseShift",
+              label: "Desplazamiento del puente de la nariz",
+              value: 4,
+            },
+            {
+              id: "browHeight",
+              label: "Alutra de las cejas",
+              value: 4,
+            },
+            {
+              id: "browWidth",
+              label: "Ancho de las mejillas",
+              value: 4,
+            },
+            {
+              id: "cheekboneHeight",
+              label: "Apertura de los ojos",
+              value: 4,
+            },
+            {
+              id: "eyeHeight",
+              label: "Ancho de los labios",
+              value: 4,
+            },
+            {
+              id: "eyeWidth",
+              label: "Ancho de la mandibula",
+              value: 4,
+            },
+            {
+              id: "jawWidth",
+              label: "Altura de la mandibula",
+              value: 4,
+            },
+            {
+              id: "jawHeight",
+              label: "Longitud de la barbailla",
+              value: 4,
+            },
+            {
+              id: "chinLength",
+              label: "Posición de la barbilla",
+              value: 4,
+            },
+            {
+              id: "chinWidth",
+              label: "Ancho de la barbilla",
+              value: 4,
+            },
+            {
+              id: "chinShape",
+              label: "Forma de la barbilla",
+              value: 4,
+            },
+            {
+              id: "neckWidth",
+              label: "Ancho del cuello",
+              value: 4,
+            },
+          ],
+        }));
+        Alpine.data("clothTab", () => ({
+          inputs: [
+            {
+              id: "top",
+              label: "Top",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 0,
+                },
+                {
+                  label: "Textura",
+                  value: 0,
+                },
+              ],
+            },
+            {
+              id: "bottom",
+              label: "Pantalones",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 0,
+                },
+                {
+                  label: "Textura",
+                  value: 0,
+                },
+              ],
+            },
+            {
+              id: "shoes",
+              label: "Zapatos",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 0,
+                },
+                {
+                  label: "Textura",
+                  value: 0,
+                },
+              ],
+            },
+          ],
+        }));
+        Alpine.data("faceFeatures", () => ({
+          inputs: [
+            {
+              id: "acne",
+              label: "Acné",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "wrinkles",
+              label: "Envejecimiento",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "freckles",
+              label: "Lunares",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "scars",
+              label: "Daños",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "makeup",
+              label: "Maquilaje",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "blush",
+              label: "Rubor",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "lipstick",
+              label: "Complexión",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "eyeshadow",
+              label: "Labios",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "eyeliner",
+              label: "Manchas Corporales",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+            {
+              id: "mascara",
+              label: "Vello corporal",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+            },
+          ],
+        }));
+        Alpine.data("dnaTabData", () => ({
+          inputs: [
+            {
+              id: "dna",
+              label: "Parecdio de la cara",
+              value: 5,
+            },
+            {
+              id: "skin",
+              label: "Parecido de la piel",
+              value: 5,
+            },
+          ],
+          eyeColor: {
+            colors: [
+              "#00ff00",
+              "#50c878",
+              "#add8e6",
+              "#009dc4",
+              "#b5651d",
+              "#654321",
+              "#8e7618",
+              "#a9a9a9",
+              "#d3d3d3",
+            ],
+            selectedColor: "",
+          },
+        }));
+        Alpine.data("headTabData", () => ({
+          inputs: [
+            {
+              id: "hair",
+              label: "Pelo",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 0,
+                },
+              ],
+              swatches: [
+                {
+                  label: "Color primario",
+                  colors: hairColors,
+                  selectedColor: "",
+                },
+                {
+                  label: "Color secundario",
+                  colors: hairColors,
+                  selectedColor: "",
+                },
+              ],
+            },
+            {
+              id: "facialHair",
+              label: "Cejas",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 0,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+              swatches: [
+                {
+                  label: "Color primario",
+                  colors: faceHair,
+                  selectedColor: "",
+                },
+              ],
+            },
+            {
+              id: "beard",
+              label: "Barba",
+              inputs: [
+                {
+                  label: "Estilo",
+                  value: 10,
+                },
+                {
+                  label: "Opacidad",
+                  value: 10,
+                },
+              ],
+              swatches: [
+                {
+                  label: "Color primario",
+                  colors: faceHair,
+                  selectedColor: "",
+                },
+              ],
+            },
+          ],
+        }));
+      });
+
+      const hairColors = [
+        "#0c0c0c",
+        "#1d1a17",
+        "#281d18",
+        "#3d1f15",
+        "#682e19",
+        "#954b29",
+        "#a35234",
+        "#9b5f3d",
+        "#b57e54",
+        "#c19167",
+        "#af7f53",
+        "#be9560",
+        "#d0ac75",
+        "#b37f43",
+        "#dbac68",
+        "#e4ba7e",
+        "#bd895a",
+        "#83422c",
+        "#8e3a28",
+        "#8a241c",
+        "#962b20",
+        "#a7271d",
+        "#c4351f",
+        "#d8421f",
+        "#c35731",
+        "#d24b21",
+        "#816755",
+        "#917660",
+        "#a88c74",
+        "#d0b69e",
+        "#513442",
+        "#744557",
+        "#a94663",
+        "#cb1e8e",
+        "#f63f78",
+        "#ed9393",
+        "#0b917e",
+        "#248081",
+        "#1b4d6b",
+        "#578d4b",
+        "#235433",
+        "#155146",
+        "#889e2e",
+        "#71881b",
+        "#468f21",
+        "#cc953d",
+        "#ebb010",
+        "#ec971a",
+        "#e76816",
+        "#e64810",
+        "#ec4d0e",
+        "#c22313",
+        "#e43315",
+        "#ae1b18",
+        "#6d0c0e",
+        "#281914",
+        "#3d241a",
+        "#4c281a",
+        "#5d3929",
+        "#69402b",
+        "#291b16",
+        "#0e0e10",
+        "#e6bb84",
+        "#d8ac74",
+      ];
+
+      const faceHair = [
+        "#0c0c0c",
+        "#1d1a17",
+        "#281d18",
+        "#3d1f15",
+        "#682e19",
+        "#954b29",
+        "#a35234",
+        "#9b5f3d",
+        "#b57e54",
+        "#c19167",
+        "#af7f53",
+        "#be9560",
+        "#d0ac75",
+        "#b37f43",
+        "#dbac68",
+        "#e4ba7e",
+        "#bd895a",
+        "#83422c",
+        "#816755",
+        "#917660",
+        "#a88c74",
+        "#d0b69e",
+        "#281914",
+        "#3d241a",
+        "#4c281a",
+        "#5d3929",
+        "#69402b",
+        "#291b16",
+        "#0e0e10",
+        "#e6bb84",
+        "#d8ac74",
+      ];
+    </script>
+  </body>
+</html>
