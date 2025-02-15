@@ -567,6 +567,9 @@
   .top-\[1\.5vw\] {
     top: 1.5vw;
   }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
@@ -588,6 +591,9 @@
   .bottom-\[0\.5vw\] {
     bottom: 0.5vw;
   }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
   .left-1 {
     left: calc(var(--spacing) * 1);
   }
@@ -596,6 +602,9 @@
   }
   .left-\[0\] {
     left: 0;
+  }
+  .left-full {
+    left: 100%;
   }
   .z-10 {
     z-index: 10;
